@@ -1,0 +1,13 @@
+{
+  "cSpell.enabled": true,
+
+  "cSpell.language": "es,en",
+  
+  "cSpell.words": [
+    "idempotente",
+    "monitoreo",
+    "observabilidad",
+    "OWASP",
+    "quantitativos"
+  ]
+}
