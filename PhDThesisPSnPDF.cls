@@ -588,7 +588,7 @@ supported!}
   \RequirePackage{amsmath}
   \RequirePackage{amssymb}
 \fi
-
+\usepackage{svg}
 % Don't break enumeration (etc.) across pages in an ugly manner
 \clubpenalty=10000
 \widowpenalty=10000
@@ -874,7 +874,7 @@ wish to left align your text}
 \newcommand{\advisorlinewidth}[1]{\renewcommand{\@advisorlinewidth}{#1}}
 
 % Submission Text
-\newcommand{\submissiontext}{This dissertation is submitted for the degree of }
+\newcommand{\submissiontext}{Esta tesis se presenta para el titulo de }
 
 % keywords (These keywords will appear in the PDF meta-information
 % called `pdfkeywords`.)
