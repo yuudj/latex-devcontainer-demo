@@ -2,7 +2,7 @@
   "cSpell.enabled": true,
 
   "cSpell.language": "es,en",
-  
+
   "cSpell.words": [
     "idempotente",
     "monitoreo",
@@ -11,11 +11,12 @@
     "quantitativos"
   ],
   "latex-workshop.latex.tools": [
-    
+
     {
       "name": "latexmk",
       "command": "latexmk",
       "args": [
+        "-shell-escape",
         "-synctex=1",
         "-interaction=nonstopmode",
         "-file-line-error",

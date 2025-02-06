@@ -25,6 +25,18 @@ Para inicializar el reposiotrio debe tener los siguientes elementos instalados
 ### Agregando cambios
 
 
+### Compilación manual
+Para compilar el documento 
+
+```bash
+./compile-thesis.sh compile thesis
+```
+
+Si alguna imagen no se acutlaiza pruebe ejecutar el comando y luego volver a compilar
+```bash
+./compile-thesis.sh clean thesis
+```
+
 ### Actualizar plantilla
 
 ### Previsualización de los cambios
