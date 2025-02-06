@@ -12,7 +12,6 @@
 *~*
 *.nlo*
 *make*
-*.d*
 *.bcf*
 *.blg*
 *~*
@@ -37,4 +36,4 @@ thesis.run.xml*
 *run.xml*
 *.latexmkrc*
 *_latexmk*
-!.devcontainer
+/svg-inkscape
