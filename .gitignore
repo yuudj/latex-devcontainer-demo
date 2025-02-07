@@ -1,3 +1,4 @@
+*_svg-tex.pdf*
 *.tdo*
 .DS_Store*
 *.aux*
@@ -36,4 +37,4 @@ thesis.run.xml*
 *run.xml*
 *.latexmkrc*
 *_latexmk*
-/svg-inkscape
+
