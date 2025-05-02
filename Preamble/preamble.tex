@@ -58,6 +58,14 @@
 \renewcommand{\figurename}{Fig.} %to support older versions of captions.sty
 
 
+% *************************** Change language to spanish *****************************
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+%\usepackage{hyperref}My Índice de tablas
+\addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
+\addto\captionsspanish{\renewcommand{\listtablename}{Índice de tablas}}
+
+
 % *************************** Graphics and figures *****************************
 
 %\usepackage{rotating}
@@ -65,7 +73,7 @@
 
 % Uncomment the following two lines to force Latex to place the figure.
 % Use [H] when including graphics. Note 'H' instead of 'h'
-%\usepackage{float}
+\usepackage{float}
 %\restylefloat{figure}
 
 % Subcaption package is also available in the sty folder you can use that by
@@ -79,7 +87,7 @@
 \usepackage{multirow}
 
 %\usepackage{multicol}
-%\usepackage{longtable}
+\usepackage{longtable}
 %\usepackage{tabularx}
 
 
@@ -92,6 +100,7 @@
 % Choose linespacing as appropriate. Default is one-half line spacing as per the
 % University guidelines
 
+% doble espacio
 % \doublespacing
 % \onehalfspacing
 % \singlespacing
@@ -109,18 +118,11 @@
 % *****************************************************************************
 % *************************** Bibliography  and References ********************
 
-%\usepackage{cleveref} %Referencing without need to explicitly state fig /table
+\RequirePackage[backend=biber, style=numeric, sorting=none, url=true, doi=true]{biblatex}
+\addbibresource{References/references.bib}
 
-% Add `custombib' in the document class option to use this section
-\ifuseCustomBib
-   \RequirePackage[square, sort, numbers, authoryear]{natbib} % CustomBib
+\renewcommand{\bibname}{Referencias}
 
-% If you would like to use biblatex for your reference management, as opposed to the default `natbibpackage` pass the option `custombib` in the document class. Comment out the previous line to make sure you don't load the natbib package. Uncomment the following lines and specify the location of references.bib file
-
-%\RequirePackage[backend=biber, style=numeric-comp, citestyle=numeric, sorting=nty, natbib=true]{biblatex}
-%\addbibresource{References/references} %Location of references.bib only for biblatex, Do not omit the .bib extension from the filename.
-
-\fi
 
 % changes the default name `Bibliography` -> `References'
 \renewcommand{\bibname}{References}
@@ -130,11 +132,11 @@
 % ************************* User Defined Commands ******************************
 % ******************************************************************************
 
-% *********** To change the name of Table of Contents / LOF and LOT ************
+% *********** To change the name of Índice general / LOF and LOT ************
 
-%\renewcommand{\contentsname}{My Table of Contents}
-%\renewcommand{\listfigurename}{My List of Figures}
-%\renewcommand{\listtablename}{My List of Tables}
+\renewcommand{\contentsname}{My Índice general}
+\renewcommand{\listfigurename}{My Índice de figuras}
+\renewcommand{\listtablename}{My Índice de tablas}
 
 
 % ********************** TOC depth and numbering depth *************************
@@ -208,3 +210,24 @@
 % *****************************************************************************
 % ******************* Better enumeration my MB*************
 \usepackage{enumitem}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhf{} % Limpia encabezado y pie
+\fancyhead[L]{José Pérez} % Encabezado izquierdo
+\fancyhead[R]{Modelo de tesina en LaTeX} % Encabezado derecho
+
+% El pie de página se actualiza dinámicamente desde el contenido
+\fancyfoot[R]{\thepage} % Pie derecho: número de página
+\fancyfoot[L]{\leftmark} % Pie izquierdo: nombre del capítulo
+
+\makeatletter
+\renewcommand{\chaptermark}[1]{%
+  \ifnum\pdfstrcmp{\thechapter}{\Alph{chapter}}=0
+    \markboth{Apéndice \thechapter\ - #1}{}
+  \else
+    \markboth{Capítulo \thechapter\ - #1}{}
+  \fi
+}
+\makeatother

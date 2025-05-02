@@ -2,7 +2,7 @@
   "cSpell.enabled": true,
 
   "cSpell.language": "es,en",
-  
+
   "cSpell.words": [
     "idempotente",
     "monitoreo",
@@ -11,7 +11,7 @@
     "quantitativos"
   ],
   "latex-workshop.latex.tools": [
-    
+
     {
       "name": "latexmk",
       "command": "latexmk",
@@ -137,5 +137,15 @@
       ],
       "env": {}
     }
+  ],
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.fls",
+    "*.log",
+    "*.fdb_latexmk",
+    "*.synctex.gz"
   ]
 }
