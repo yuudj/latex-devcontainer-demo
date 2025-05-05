@@ -56,7 +56,7 @@ Plantilla de tesis en LaTeX, basado en [CUED PhD thesis template](https://github
 - Inclusión de `Resumen` además del `Abstract`.
 - Cambio de “Supervisor” por “Director de tesina”.
 - Migración de `natbib` a `biblatex` para permitir el uso de URL y DOI en las referencias.
-- Cambio de idioma de a español utilizando `babel`.
+- Cambio de idioma de inglés a español utilizando `babel`.
 - Ajustes en títulos, índices, pie de página, nomenclatura y encabezados.
 - Cambio de tablas a `longtable` que permite la paginación automática.
 
