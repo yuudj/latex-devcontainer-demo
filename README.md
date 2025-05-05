@@ -62,12 +62,6 @@ Plantilla de tesis en LaTeX, basado en [CUED PhD thesis template](https://github
 
 ---
 
-## 📦 Actualización de plantilla
-
-(📌 Podés agregar aquí más adelante instrucciones sobre cómo mantener tu fork actualizado si la plantilla base se actualiza.)
-
----
-
 ## 👁️ Previsualización de cambios
 
 La compilación genera automáticamente un PDF en la raíz del proyecto (`thesis.pdf`). Cualquier cambio en el contenido se reflejará tras guardar el archivo `.tex`.
