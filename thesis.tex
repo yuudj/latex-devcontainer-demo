@@ -1,7 +1,7 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,12pt,times,numbered,print,index]{PhDThesisPSnPDF}
+\documentclass[a4paper,12pt,times,print,index,custombib]{PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -93,7 +93,7 @@
 
 \ifdefineAbstract
  \pagestyle{empty}
- \includeonly{Declaration/declaration, Abstract/abstract}
+ \includeonly{Resumen/resumen, Abstract/abstract}
 \fi
 
 % ***************************** Chapter Mode ***********************************
@@ -114,11 +114,11 @@
 \maketitle
 
 \include{Dedication/dedication}
-\include{Declaration/declaration}
-\include{Acknowledgement/acknowledgement}
+\include{Resumen/resumen}
 \include{Abstract/abstract}
+%\include{Acknowledgement/acknowledgement}
 
-% *********************** Adding TOC and List of Figures ***********************
+% *********************** Adding TOC and Índice de figuras ***********************
 
 \tableofcontents
 
@@ -155,13 +155,13 @@
 % Bibliography style previews: http://nodonn.tipido.net/bibstyle.php
 % Reference styles: http://sites.stat.psu.edu/~surajit/present/bib.htm
 
-\bibliographystyle{apalike}
-%\bibliographystyle{unsrt} % Use for unsorted references  
+%\bibliographystyle{apalike}
+%\bibliographystyle{unsrt} % Use for unsorted references
 %\bibliographystyle{plainnat} % use this to have URLs listed in References
 \cleardoublepage
-\bibliography{References/references} % Path to your References.bib file
+%\bibliography{References/references} % Path to your References.bib file
 
-
+\printbibliography[heading=bibintoc, title={Referencias}]
 % If you would like to use BibLaTeX for your references, pass `custombib' as
 % an option in the document class. The location of 'reference.bib' should be
 % specified in the preamble.tex file in the custombib section.
@@ -185,3 +185,4 @@
 \printthesisindex % If index is present
 
 \end{document}
+
