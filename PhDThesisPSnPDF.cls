@@ -252,15 +252,15 @@ supported!}
 \RequirePackage{ifpdf}    % Check for pdfLaTeX
 \RequirePackage{ifxetex}  % XeLaTeX
 
-% *********************** Table of Contents & Appendices ***********************
-% add Bibliography, List of figures and tables to contents
-\RequirePackage[nottoc]{tocbibind}
+% *********************** Índice general & Apéndices ***********************
+% add Bibliografia, Índice de figuras y tablas de contenidos
+\RequirePackage[nottoc,notlof,notlot]{tocbibind}
 % Add appendices
 \RequirePackage[title,titletoc]{appendix}
 
-\renewcommand{\contentsname}{Table of contents}
-\renewcommand{\listfigurename}{List of figures}
-\renewcommand{\listtablename}{List of tables}
+\renewcommand{\contentsname}{Índice general}
+\renewcommand{\listfigurename}{Índice de figuras}
+\renewcommand{\listtablename}{Índice de tablas}
 
 % Hides Contents appearing from TOC, but adds it to bookmarks
 \let\temptableofcontents\tableofcontents
@@ -782,7 +782,7 @@ wish to left align your text}
 \fi
 }
 
-\setlength{\headheight}{14.5pt}
+\setlength{\headheight}{15.13202pt}
 %\renewcommand{\headrulewidth}{0.5pt}
 %\renewcommand{\footrulewidth}{0pt}
 \fancypagestyle{plain}{
@@ -847,17 +847,17 @@ wish to left align your text}
 \newcommand{\@collegeshield}{}
 \newcommand{\collegeshield}[1]{\renewcommand{\@collegeshield}{#1}\PHD@collegeshieldtrue}
 
-% Supervisor
+% Director de tesina
 \newif\ifPHD@supervisor\PHD@supervisorfalse
 \newcommand{\@supervisor}{}
 \newcommand{\supervisor}[1]{\renewcommand{\@supervisor}{#1}\PHD@supervisortrue}
 
-% Supervisor Title (Supervisor - Default, can be changed)
-\newcommand{\@supervisorrole}{Supervisor: }
+% Director de tesina Title (Director de tesina - Default, can be changed)
+\newcommand{\@supervisorrole}{Director de tesina: }
 \newcommand{\supervisorrole}[1]{\renewcommand{\@supervisorrole}{#1}}
 
-% Supervisor width to align
-\newcommand{\@supervisorlinewidth}{0.35\textwidth}
+% Director de tesina width to align
+\newcommand{\@supervisorlinewidth}{0.16\textwidth}
 \newcommand{\supervisorlinewidth}[1]{\renewcommand{\@supervisorlinewidth}{#1}}
 
 % Advisor
@@ -874,7 +874,7 @@ wish to left align your text}
 \newcommand{\advisorlinewidth}[1]{\renewcommand{\@advisorlinewidth}{#1}}
 
 % Submission Text
-\newcommand{\submissiontext}{Esta tesis se presenta para el titulo de }
+\newcommand{\submissiontext}{Esta tesina se presenta para el título de}
 
 % keywords (These keywords will appear in the PDF meta-information
 % called `pdfkeywords`.)
@@ -886,8 +886,8 @@ wish to left align your text}
 \newcommand{\@subject}{}
 \newcommand{\subject}[1]{\renewcommand{\@subject}{#1}}
 
-% Declaration title text
-\newcommand{\@declarationtitle}{Declaration}
+% Resumen title text
+\newcommand{\@resumentitle}{Resumen}
 
 % Acknowledgment title text
 \newcommand{\@acknowledgementstitle}{Acknowledgements}
@@ -963,7 +963,7 @@ wish to left align your text}
 {\usebox{\PHD@author}}
 \vspace*{1em}
 
-% Supervisor
+% Director de tesina
 \ifPHD@supervisor%
 {\usebox{\PHD@supervisor}}
 \vspace*{0.5em}
@@ -1006,21 +1006,21 @@ wish to left align your text}
 
 
 
-% ******************************* Declaration **********************************
-% The declaration environment puts a large, bold, centered
-% "Declaration" label at the top of the page.
+% ******************************* Resumen **********************************
+% The resumen environment puts a large, bold, centered
+% "resumen" label at the top of the page.
 
-\newenvironment{declaration}{
+\newenvironment{resumen}{
 \cleardoublepage
 \setsinglecolumn
-\chapter*{\centering \Large \@declarationtitle}
+\chapter*{\centering \Large \@resumentitle}
 \thispagestyle{empty}
-}{
-\flushright
-\@author{}\\
-\@degreedate{}
-\vfill
-}
+}%{
+%\flushright
+%\@author{}\\
+%\@degreedate{}
+%\vfill
+%}
 
 
 
@@ -1183,7 +1183,7 @@ wish to left align your text}
   \end{minipage}
 \end{lrbox}
 
-% Supervisor Box
+% Director de tesis Box
 \newsavebox{\PHD@supervisor}
 \begin{lrbox}{\PHD@supervisor}
   \begin{minipage}[c]{\textwidth}

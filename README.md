@@ -1,73 +1,70 @@
-# LaTeX devcontainer template
-PLantilla de tesis en LaTeX, basado en [CUED PhD thesis template](https://github.com/kks32/phd-thesis-template/tree/master), con [devcontainer](https://containers.dev/).
+# 📘 Plantilla de Tesina en LaTeX con Devcontainer
+Plantilla de tesis en LaTeX, basado en [CUED PhD thesis template](https://github.com/kks32/phd-thesis-template/tree/master), con [devcontainer](https://containers.dev/).
 
-La utilización de devcontainers en este repositorio le permite
-- Trabajar mínimos requerimientos independientemente de software, todas las herramientas y bibliotecas están incluidas en el contenedor
-- Actualizar su ambiente de trabajo rápidamente
-- Trabajar con on-line con [GitHub Codespaces](https://github.com/features/codespaces)
+---
 
-## Inicio rápido
+## ⚙️ La utilización de devcontainers en este repositorio permite:
+1. Trabajar mínimos requerimientos independientemente de software, todas las herramientas y librerías están incluidas en el contenedor
+1. Actualizar su ambiente de trabajo rápidamente
+1. Trabajar con on-line con [GitHub Codespaces](https://github.com/features/codespaces)
 
-### Pre-requisitos (solo local)
-Para inicializar el repositorio debe tener los siguientes elementos instalados
+## 🚀 Inicio rápido
+
+### 🔧 Pre-requisitos
+**Para inicializar el repositorio debe tener los siguientes elementos instalados**:
 - Linux Docker Engine: Debe tener alguna implementación de docker funcionando en su PC, se sugieren
     - [Docker](https://docs.docker.com/engine/install/ubuntu/) (Linux)
     - [Docker Desktop](https://docs.docker.com/desktop/) (Windows /MAC )
     - [Rancher Desktop](https://rancherdesktop.io/) (Windows /MAC ). **IMPORTANTE**: cambiar el CONTAINER ENGINE por defecto `dockerd (moby)`, por defecto rancher utiliza `containerd` que requiere ajustes para poder utilizarse
 - Visual Studio Code
-    - Extension: [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
+    - Extensión: [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
 
+### 🛠️ Usar la plantilla
 
-### Clonar la plantilla
-La mejor forma de utilizar la plantilla es hacer un fork de este repositorio. Haciendo esto podrá actualizar su repositorio con los cambios aquí incluidos.
+1. Hacer un **fork** del repositorio.
+2. Abrir el proyecto en VS Code.
+3. Aceptar la apertura en el contenedor.
+4. ¡Listo! El entorno estará listo para compilar.
 
-- [Hacer fork](https://github.com/yuudj/latex-devcontainer-demo)
-- Clonar el repositorio resultante en su PC
-- Verificar que tiene algún Docker Engine corriendo (vea los pre-requisitos)
+---
 
-### Utilizar la plantilla
+## 📄 Archivos importantes
 
-En forma local (recuerde los pre requisitos)
-- Abrir el repositorio con Visual Studio Code
-- Selecciona la opción `Clone In Volume` o `Reopen in Container`. 
+- `thesis.tex`: archivo principal que organiza la estructura del documento mediante `\include{}`.
+- `Preamble/preamble.tex`: configuración de paquetes, márgenes, estilo, y bibliografía.
+- `thesis-info.tex`: información como título, autor, director, fecha, etc.  (acá se definen los datos de la carátula) y metadatos del documento.
+- `References/references.bib`: archivo de bibliografía en formato BibLaTeX.
+- `Resumen/resumen.tex`: resumen en español.
+- `Abstract/abstract.tex`: abstract en inglés.
+- `Dedication/dedication.tex`: dedicatoria opcional.
+- `ChapterX/chapterX.tex`: capítulos individuales (incluirlos desde `thesis.tex`).
+- `AppendixX/appendixX.tex`: apéndices opcionales.
 
-![Clone In Volume](https://sarti.dev/blog-images/vscode-clone-in-volume.png)
+---
 
+## 🔁 Compilación automática y bibliografía
 
-> [!IMPORTANT]  
-> Es importante destacar que en entorno Windows la opción  `Clone In Volume` es mucho mas performante. 
+- Usa `latexmk` con `biber` para compilar automáticamente y generar bibliografía con URLs y DOIs.
+- El `devcontainer` instala todas las herramientas necesarias (LaTeX, `latexmk`, `biber`, etc.).
+- Solo necesitás guardar el archivo para que se compile automáticamente si usás VS Code.
 
-### Agregando cambios
-Puede cambiar cualquier archivos. Recuerde que si cambia algún archivo del repositorio original existe la posibilidad de que luego tenga conflictos de Merge.
+---
 
-El devcontainer tiene instalada la extension [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) de @James-Yu que permite la pre-visualización de los cambio a medida que pasan. 
+## ✏️ Personalizaciones realizadas (respecto a la plantilla original)
 
-Es importante recalcar que LaTeX compila en PDF y ño que se pre.visualiza es el archivo PDF resultante. Si hay errores de compilación dicho archivo puede quedar en blanco o trunco.
+- Estructura adaptada a las normas de presentación de tesinas de UNAHUR.
+- Inclusión de `Resumen` además del `Abstract`.
+- Cambio de “Supervisor” por “Director de tesina”.
+- Migración de `natbib` a `biblatex` para permitir el uso de URL y DOI en las referencias.
+- Cambio de idioma de inglés a español utilizando `babel`.
+- Ajustes en títulos, índices, pie de página, nomenclatura y encabezados.
+- Cambio de tablas a `longtable` que permite la paginación automática.
 
-Para mas información sobre este extension se puede consultar la documentación en el [repositorio](https://github.com/James-Yu/LaTeX-Workshop) 
+---
 
-### Compilación manual
-Para compilar el documento 
+## 👁️ Previsualización de cambios
 
-```bash
-./compile-thesis.sh compile thesis
-```
+La compilación genera automáticamente un PDF en la raíz del proyecto (`thesis.pdf`). Cualquier cambio en el contenido se reflejará tras guardar el archivo `.tex`.
 
-Si alguna imagen no se actualiza pruebe ejecutar el comando y luego volver a compilar
-```bash
-./compile-thesis.sh clean thesis
-```
-
-### Actualizar plantilla
-Desde el repositorio generado por el fork puede hacer una sincronización. 
-![Fork Repo](https://docs.github.com/assets/cb-75605/mw-1440/images/help/repository/sync-fork-dropdown.webp)
-
-Para mas información puede [consultar la documentación de GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork).
-
-
-
-
-
-
-
+---
 
