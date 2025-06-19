@@ -588,7 +588,7 @@ supported!}
   \RequirePackage{amsmath}
   \RequirePackage{amssymb}
 \fi
-\usepackage{svg}
+\usepackage[inkscapearea=page]{svg}
 % Don't break enumeration (etc.) across pages in an ugly manner
 \clubpenalty=10000
 \widowpenalty=10000

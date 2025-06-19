@@ -1,3 +1,4 @@
+*_svg-tex.pdf*
 *.tdo*
 .DS_Store*
 *.aux*
@@ -12,7 +13,6 @@
 *~*
 *.nlo*
 *make*
-*.d*
 *.bcf*
 *.blg*
 *~*
@@ -37,4 +37,4 @@ thesis.run.xml*
 *run.xml*
 *.latexmkrc*
 *_latexmk*
-!.devcontainer
+

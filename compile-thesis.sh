@@ -30,6 +30,7 @@ if [ $1 = $clean ]; then
 	rm -rf $filename.ps
 	rm -rf $filename.dvi
 	rm -rf *#*
+	rm -rf *#*
 	echo "Cleaning complete!"
 	exit
 else
@@ -43,6 +44,7 @@ filename=$2;
 
 if [ $1 = $clean ]; then
 	echo "Cleaning please wait ..."
+  rm -rf ./svg-inkscape
 	rm -f *~
 	rm -rf *.aux
 	rm -rf *.bbl
@@ -64,6 +66,7 @@ if [ $1 = $clean ]; then
 	rm -rf $filename.pdf
 	rm -rf $filename.ps
 	rm -rf $filename.dvi
+	rm -rf *#*
 	rm -rf *#*
 	echo "Cleaning complete!"
 	exit
